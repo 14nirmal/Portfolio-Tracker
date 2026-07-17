@@ -206,6 +206,7 @@ const sendAlertNotification = async (message, toEmail = 'nirmalpatel93280@gmail.
   try {
     console.error('🚨 ALERT:', message);
 
+
     const emailServiceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
     const emailTemplateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
     const publicKey = import.meta.env.VITE_EMAILJS_USER_ID;
@@ -230,7 +231,7 @@ const sendAlertNotification = async (message, toEmail = 'nirmalpatel93280@gmail.
   current_price: current_price,
   alert_price: alert_price,
   message: message,
-  website_link: "https://your-portfolio-tracker-url.com",
+  website_link: import.meta.env.VITE_WEBSITE_URL,
   from_name: "Portfolio Tracker",
   reply_to: "npwork694@gmail.com"
 }
